@@ -1,0 +1,37 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f5;
+    color: #333;
+}
+.hero {
+    background: #0a74da;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+.logo {
+    width: 150px;
+    border-radius: 8px;
+}
+section {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #0a74da;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+ul li {
+    margin: 10px 0;
+}
