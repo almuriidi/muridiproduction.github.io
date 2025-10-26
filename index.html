@@ -266,21 +266,21 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
 
     <label style="font-weight:600;color:#333;">
       Magacaaga:
-      <input type="text" id="name" name="name" placeholder="Gali magacaaga" required
+      <input type="text" id="name" name="name" placeholder="Gali magacaaga"
              style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
              transition:0.3s;border-left:4px solid #007bff;">
     </label>
 
     <label style="font-weight:600;color:#333;">
       Email-kaaga:
-      <input type="email" id="email" name="email" placeholder="Gali email-kaaga" required
+      <input type="email" id="email" name="email" placeholder="Gali email-kaaga"
              style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
              transition:0.3s;border-left:4px solid #007bff;">
     </label>
 
     <label style="font-weight:600;color:#333;">
       Fariintaada:
-      <textarea id="message" name="message" rows="6" placeholder="Qor fariintaada..." required
+      <textarea id="message" name="message" rows="6" placeholder="Qor fariintaada..."
                 style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
                 transition:0.3s;border-left:4px solid #007bff;"></textarea>
     </label>
@@ -312,23 +312,24 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
       return false;
     }
 
-    // Show success message
+    // Fariinta guusha
     successMsg.style.display = "block";
 
-    // Clear inputs after submit
+    // Nadiifi meelaha kadib marka la diro
     document.getElementById('name').value = "";
     document.getElementById('email').value = "";
     document.getElementById('message').value = "";
 
-    // Hide message after 5 seconds
+    // Ka qarso fariinta 5 ilbiriqsi kadib
     setTimeout(() => successMsg.style.display = "none", 5000);
   });
 
-  // Optional hover effect
+  // Hover effect
   const button = form.querySelector("button");
   button.addEventListener("mouseover", () => button.style.backgroundColor = "#0056b3");
   button.addEventListener("mouseout", () => button.style.backgroundColor = "#007bff");
 </script>
+
 
 
 </section>
