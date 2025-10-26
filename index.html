@@ -18,152 +18,48 @@
 style="max-width:600px;margin:40px auto;padding:25px;background:linear-gradient(135deg,#f0f8ff,#ffffff);
 border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-family:'Poppins',sans-serif;">
  
-<section id="contact" class="contact-section" style="max-width:700px;margin:auto;padding:40px 20px;background:#f8f8f8;border-radius:15px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nala Soo Xiriir - Muriidi Production</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
+<section id="contact" class="contact-section" 
+style="max-width:700px;margin:auto;padding:40px 20px;background:linear-gradient(135deg,#ffffff,#f0f8ff);
+border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',sans-serif;">
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-6">
+  <h2 style="text-align:center;color:#007bff;margin-bottom:15px;font-size:28px;">Nala Soo Xiriir</h2>
+  <p style="text-align:center;color:#555;margin-bottom:30px;">Fadlan buuxi foomkan si aad fariin noogu dirto.</p>
 
-  <section id="contact" 
-    class="max-w-3xl w-full bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-blue-100">
+  <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" 
+  style="display:flex;flex-direction:column;gap:20px;">
 
-    <h2 class="text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700">
-      📬 Nala Soo Xiriir
-    </h2>
+    <label style="font-weight:600;color:#333;">
+      Magacaaga:
+      <input type="text" id="name" name="name" placeholder="Gali magacaaga" required
+             style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
+             transition:0.3s;border-left:4px solid #007bff;">
+    </label>
 
-    <!-- Contact info -->
-    <div class="text-center mb-10 space-y-3 text-gray-700">
-      <p><strong>Email:</strong>
-        <a href="mailto:ahmedabdimuridi333@gmail.com" class="text-blue-600 hover:text-purple-600 transition">
-          ahmedabdimuridi333@gmail.com
-        </a>
-      </p>
-      <p><strong>Tel (Soomaaliya):</strong>
-        <a href="tel:+252618291850" class="text-blue-600 hover:text-purple-600 font-semibold transition">
-          +252 618 291 850
-        </a>
-      </p>
-      <p><strong>Tel (Kenya):</strong>
-        <a href="tel:+254798546265" class="text-blue-600 hover:text-purple-600 font-semibold transition">
-          +254 798 546 265
-        </a>
-      </p>
-      <p><strong>Facebook:</strong>
-        <a href="https://facebook.com/MuriidiProduction" target="_blank"
-           class="text-blue-600 hover:text-purple-600 font-bold transition">
-           Muriidi Production
-        </a>
-      </p>
-    </div>
+    <label style="font-weight:600;color:#333;">
+      Email-kaaga:
+      <input type="email" id="email" name="email" placeholder="Gali email-kaaga" required
+             style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
+             transition:0.3s;border-left:4px solid #007bff;">
+    </label>
 
-    <!-- Contact form -->
-    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-6">
-      
-      <div>
-        <label class="block font-semibold text-gray-700 mb-1">Magacaaga:</label>
-        <input type="text" name="name" placeholder="Geli magacaaga" required 
-          oninvalid="this.setCustomValidity('⚠️ Fadlan geli magacaaga!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300">
-      </div>
+    <label style="font-weight:600;color:#333;">
+      Fariintaada:
+      <textarea id="message" name="message" rows="6" placeholder="Qor fariintaada..." required
+                style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
+                transition:0.3s;border-left:4px solid #007bff;"></textarea>
+    </label>
 
-      <div>
-        <label class="block font-semibold text-gray-700 mb-1">Email-kaaga:</label>
-        <input type="email" name="email" placeholder="Geli email-kaaga" required 
-          oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300">
-      </div>
+    <button type="submit"
+            style="background-color:#007bff;color:white;font-size:17px;font-weight:bold;border:none;
+            padding:14px;border-radius:10px;cursor:pointer;transition:all 0.3s ease;">
+      🚀 Send Message
+    </button>
 
-      <div>
-        <label class="block font-semibold text-gray-700 mb-1">Fariintaada:</label>
-        <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
-          oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300"></textarea>
-      </div>
-
-      <button type="submit" 
-        class="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-        🚀 Dir Fariinta
-      </button>
-    </form>
-  </section>
-
-  <script>
-    const form = document.getElementById("contactForm");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { Accept: "application/json" }
-      });
-
-      if (response.ok) {
-        Swal.fire({
-          icon: 'success',
-          title: '✅ Fariintaada waa la diray!',
-          text: 'Waad ku mahadsan tahay — waxaan kula soo xiriiri doonaa sida ugu dhakhsaha badan.',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#2563eb'
-        });
-        form.reset(); // nadiifi xogta
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: '❌ Fariinta lama dirin!',
-          text: 'Fadlan isku day mar kale. Waxaa dhici karta in xiriirka uu go’an yahay.',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e11d48'
-        });
-      }
-    });
-  </script>
-</body>
-</html>
-
-
-<script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('successMessage');
-
-  form.addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-      alert("⚠️ Fadlan buuxi meelaha bannaan ka hor inta aadan dirin!");
-      return;
-    }
-
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      successMsg.style.display = 'block';
-      form.reset();
-      setTimeout(() => successMsg.style.display = 'none', 4000);
-    } else {
-      alert("❌ Fariinta lama dirin, fadlan isku day mar kale.");
-    }
-  });
-</script>
+    <p id="successMessage" style="display:none;color:green;text-align:center;font-weight:600;margin-top:15px;">
+      ✅ Fariintaada waa la diray! Waad ku mahadsan tahay la soo xiriirka Muriidi Production.
+    </p>
+  </form>
+</section>
 
 <script>
   const form = document.getElementById('contactForm');
@@ -197,8 +93,6 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
   button.addEventListener("mouseover", () => button.style.backgroundColor = "#0056b3");
   button.addEventListener("mouseout", () => button.style.backgroundColor = "#007bff");
 </script>
-
-
 
 </section>
 
