@@ -22,95 +22,91 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 <html lang="so">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nala Soo Xiriir - Muriidi Production</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
-    /* placeholder soft color */
-    ::placeholder {
-      color: #94a3b8; /* blue-gray-400 */
-      opacity: 1;
-    }
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nala Soo Xiriir - Muriidi Production</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    /* Input hover & focus effects */
-    input:hover, textarea:hover {
-      border-color: #3b82f6; /* blue-500 */
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
-      transition: 0.3s ease;
-    }
+<body class="bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-800 font-sans">
 
-    input:focus, textarea:focus {
-      border-color: #6366f1; /* indigo-500 */
-      box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
-      transition: 0.3s ease;
-    }
-
-    /* Button glow */
-    button {
-      background: linear-gradient(to right, #3b82f6, #6366f1);
-      transition: all 0.3s ease-in-out;
-    }
-
-    button:hover {
-      background: linear-gradient(to right, #2563eb, #7c3aed);
-      box-shadow: 0 0 18px rgba(79, 70, 229, 0.5);
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-
-<body class="bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 font-sans">
   <section id="contact" class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl border border-blue-100">
-    <h2 class="text-4xl font-bold mb-6 text-center text-blue-700">Nala Soo Xiriir</h2>
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-700 tracking-wide drop-shadow-sm">
+      ✉️ Nala Soo Xiriir
+    </h2>
 
-    <div class="text-center mb-8 space-y-2">
+    <div class="text-center mb-8 space-y-2 text-gray-700">
       <p><strong>Email:</strong> 
-        <a href="mailto:ahmedabdimuridi333@gmail.com" class="text-blue-600 hover:underline">
-          ahmedabdimuridi333@gmail.com
+        <a href="mailto:ahmedabdimuridi333@gmail.com" 
+           class="text-blue-600 hover:text-blue-800 hover:underline transition">
+           ahmedabdimuridi333@gmail.com
         </a>
       </p>
-      <p><strong>Tel 1:</strong> 
-        <a href="tel:+252618291850" class="text-blue-600 hover:underline">+252 618 291 850</a>
+
+      <p>
+        <strong>Tel 1:</strong> 
+        <a href="tel:+252618291850" class="text-blue-600 hover:text-blue-800 transition">
+          +252618291850
+        </a>
       </p>
-      <p><strong>Tel 2:</strong> 
-        <a href="tel:+254798546265" class="text-blue-600 hover:underline">+254 798 546 265</a>
+
+      <p>
+        <strong>Tel 2:</strong> 
+        <a href="tel:+254798546265" class="text-blue-600 hover:text-blue-800 transition">
+          +254798546265
+        </a>
       </p>
-      <p><strong>Facebook:</strong> 
-        <a href="https://facebook.com/MuriidiProduction" target="_blank" class="text-blue-600 hover:underline font-semibold">
+
+      <p>
+        <strong>Facebook:</strong>
+        <a href="https://facebook.com/MuriidiProduction" target="_blank" 
+           class="text-blue-600 hover:text-blue-800 hover:underline transition">
           Muriidi Production
         </a>
       </p>
     </div>
 
-    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-5">
+    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-6">
+      
+      <!-- Magaca -->
       <div>
-        <label class="block mb-2 font-semibold">Magacaaga:</label>
-        <input type="text" name="name" placeholder="Geli magacaaga" required 
-          oninvalid="this.setCustomValidity('Fadlan geli magacaaga!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300 bg-white/90">
+        <label class="block mb-2 font-semibold text-gray-700">Magacaaga:</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-blue-500 text-lg">📛</span>
+          <input type="text" name="name" placeholder="Geli magacaaga..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan geli magacaaga!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md">
+        </div>
       </div>
 
+      <!-- Email -->
       <div>
-        <label class="block mb-2 font-semibold">Email-kaaga:</label>
-        <input type="email" name="email" placeholder="Geli email-kaaga" required 
-          oninvalid="this.setCustomValidity('Fadlan geli email sax ah!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300 bg-white/90">
+        <label class="block mb-2 font-semibold text-gray-700">Email-kaaga:</label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-blue-500 text-lg">📧</span>
+          <input type="email" name="email" placeholder="Geli email sax ah..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md">
+        </div>
       </div>
 
+      <!-- Fariinta -->
       <div>
-        <label class="block mb-2 font-semibold">Fariintaada:</label>
-        <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
-          oninvalid="this.setCustomValidity('Fadlan qor fariintaada!')" 
-          oninput="this.setCustomValidity('')"
-          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300 bg-white/90"></textarea>
+        <label class="block mb-2 font-semibold text-gray-700">Fariintaada:</label>
+        <div class="relative">
+          <span class="absolute top-3 left-3 text-blue-500 text-lg">💬</span>
+          <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md"></textarea>
+        </div>
       </div>
 
-      <button type="submit"
-        class="w-full text-white py-3 rounded-xl font-semibold shadow-md transition duration-300">
-        Dir Fariinta 🚀
+      <!-- Button -->
+      <button type="submit" 
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        🚀 Dir Fariinta
       </button>
     </form>
   </section>
@@ -119,7 +115,7 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
     const form = document.getElementById("contactForm");
 
     form.addEventListener("submit", async (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
       const formData = new FormData(form);
 
       const response = await fetch(form.action, {
@@ -148,8 +144,9 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       }
     });
   </script>
+
 </body>
-</html>
+
 
   </script>
     </section>
