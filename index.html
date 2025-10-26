@@ -54,11 +54,16 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
             padding:14px;border-radius:10px;cursor:pointer;transition:all 0.3s ease;">
       🚀 Send Message
     </button>
-
-    <p id="successMessage" style="display:none;color:green;text-align:center;font-weight:600;margin-top:15px;">
-      ✅ Fariintaada waa la diray! Waad ku mahadsan tahay la soo xiriirka Muriidi Production.
-    </p>
-  </form>
+ if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Fariintaada waa la diray!',
+          text: 'Waad ku mahadsan tahay — waxaan kula soo xiriiri doonaa sida ugu dhakhsaha badan.',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#2563eb'
+        });
+        form.reset(); // tirtir xogta kadib dirid
+      }
 </section>
 
 <script>
