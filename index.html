@@ -285,24 +285,43 @@ style="max-width:700px;margin:auto;padding:40px 20px;background:#f8f8f8;border-r
             padding:12px;border-radius:8px;cursor:pointer;transition:0.3s;">
       Send Message
     </button>
+
+    <p id="successMsg" style="color:green;font-weight:bold;text-align:center;display:none;margin-top:10px;">
+      ✅ Fariintaada waa la diray! Waad ku mahadsan tahay Muriidi Production la soo xiriirka.
+    </p>
   </form>
 </section>
 
 <script>
-  // Validation and success message
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !message) {
-      event.preventDefault(); // Stop form submission
       alert("⚠️ Fadlan buuxi meelaha bannaan ka hor inta aadan dirin!");
-      return false;
+      return;
     }
 
-    // Optional: success message
-    alert("✅ Fariintaada waa la diray! Waad ku mahadsan tahay Muriidi Production la soo xiriirka.");
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      successMsg.style.display = 'block';
+      form.reset(); // ✅ Tirtir xogta kadib dirista
+      setTimeout(() => successMsg.style.display = 'none', 4000);
+    } else {
+      alert("❌ Fariinta lama dirin, fadlan isku day mar kale.");
+    }
   });
 </script>
 
