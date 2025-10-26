@@ -54,7 +54,22 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
             padding:14px;border-radius:10px;cursor:pointer;transition:all 0.3s ease;">
       🚀 Send Message
     </button>
- if (response.ok) {
+      </form>
+</section>
+     <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // jooji reload
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
         Swal.fire({
           icon: 'success',
           title: 'Fariintaada waa la diray!',
@@ -63,44 +78,17 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
           confirmButtonColor: '#2563eb'
         });
         form.reset(); // tirtir xogta kadib dirid
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Fariinta lama dirin!',
+          text: 'Fadlan isku day mar kale — waxaa laga yaabaa in xiriirka uu go’an yahay.',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e11d48'
+        });
       }
-</section>
-
-<script>
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('successMessage');
-
-  form.addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-      alert("⚠️ Fadlan buuxi meelaha bannaan ka hor inta aadan dirin!");
-      return;
-    }
-
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
     });
-
-    if (response.ok) {
-      successMsg.style.display = 'block';
-      form.reset();
-      setTimeout(() => successMsg.style.display = 'none', 4000);
-    } else {
-      alert("❌ Fariinta lama dirin, fadlan isku day mar kale.");
-    }
-  });
-</script>
-
-
-</section>
+  </script>
 
             </div>
         </div>
