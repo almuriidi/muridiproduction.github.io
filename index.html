@@ -22,14 +22,16 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 <html lang="so">
 <head>
   <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nala Soo Xiriir - Muriidi Production</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body class="bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-800 font-sans">
 
-  <section id="contact" class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl border border-blue-100">
+  <section id="contact" 
+    class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl border border-blue-100 animate-fadeIn">
+    
     <h2 class="text-4xl font-bold mb-6 text-center text-blue-700 tracking-wide drop-shadow-sm">
       ✉️ Nala Soo Xiriir
     </h2>
@@ -70,24 +72,28 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       <!-- Magaca -->
       <div>
         <label class="block mb-2 font-semibold text-gray-700">Magacaaga:</label>
-        <div class="relative">
-          <span class="absolute inset-y-0 left-3 flex items-center text-blue-500 text-lg">📛</span>
+        <div class="relative flex items-center">
+          <span class="absolute left-4 text-blue-500 text-xl">📛</span>
           <input type="text" name="name" placeholder="Geli magacaaga..." required 
             oninvalid="this.setCustomValidity('⚠️ Fadlan geli magacaaga!')" 
             oninput="this.setCustomValidity('')"
-            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md">
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md">
         </div>
       </div>
 
       <!-- Email -->
       <div>
         <label class="block mb-2 font-semibold text-gray-700">Email-kaaga:</label>
-        <div class="relative">
-          <span class="absolute inset-y-0 left-3 flex items-center text-blue-500 text-lg">📧</span>
+        <div class="relative flex items-center">
+          <span class="absolute left-4 text-blue-500 text-xl">📧</span>
           <input type="email" name="email" placeholder="Geli email sax ah..." required 
             oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')" 
             oninput="this.setCustomValidity('')"
-            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md">
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md">
         </div>
       </div>
 
@@ -95,25 +101,40 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       <div>
         <label class="block mb-2 font-semibold text-gray-700">Fariintaada:</label>
         <div class="relative">
-          <span class="absolute top-3 left-3 text-blue-500 text-lg">💬</span>
+          <span class="absolute top-3 left-4 text-blue-500 text-xl">💬</span>
           <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
             oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')" 
             oninput="this.setCustomValidity('')"
-            class="w-full pl-10 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 ease-in-out hover:shadow-md"></textarea>
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md"></textarea>
         </div>
       </div>
 
       <!-- Button -->
       <button type="submit" 
-        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 
+               text-white py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition 
+               duration-300 ease-in-out">
         🚀 Dir Fariinta
       </button>
     </form>
   </section>
 
   <script>
-    const form = document.getElementById("contactForm");
+    // animation
+    document.querySelectorAll('.animate-fadeIn').forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        el.style.transition = 'all 0.8s ease';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, 200);
+    });
 
+    // form submission
+    const form = document.getElementById("contactForm");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
@@ -144,7 +165,6 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       }
     });
   </script>
-
 </body>
 
 
