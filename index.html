@@ -40,14 +40,8 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
       border-radius: 20px;
-      padding: 35px;
+      padding: 30px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
@@ -75,7 +69,7 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
     form {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 15px;
     }
 
     .input-group {
@@ -92,26 +86,17 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 
     input, textarea {
       width: 100%;
-      padding: 12px 12px 12px 45px; /* Meel yar oo bidix laga siiyay */
+      padding: 12px 12px 12px 40px;
       border: none;
       border-radius: 10px;
       background: rgba(255,255,255,0.15);
       color: white;
       outline: none;
       font-size: 15px;
-      border-bottom: 3px solid #00bfff; /* Blue border geeska hoose */
-      transition: all 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border-bottom: 3px solid #00ffff;
-      box-shadow: 0 0 8px #00ffff;
-      background: rgba(255,255,255,0.2);
     }
 
     input::placeholder, textarea::placeholder {
       color: #ccc;
-      padding-left: 5px; /* si placeholder-ka uu u yara siko */
     }
 
     button {
@@ -150,7 +135,6 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
       text-decoration: none;
     }
     a:hover { text-decoration: underline; }
-
   </style>
 </head>
 <body>
@@ -198,6 +182,7 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
+      // Hubi in meel bannaan la buuxiyay
       const name = form.name.value.trim();
       const email = form.email.value.trim();
       const message = form.message.value.trim();
@@ -207,6 +192,7 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
         return;
       }
 
+      // Dir formka
       const response = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
@@ -224,6 +210,7 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
   </script>
 </body>
 </html>
+
 
 
   </script>
