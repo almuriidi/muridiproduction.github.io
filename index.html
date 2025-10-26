@@ -85,8 +85,11 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 
       <!-- Email -->
       <div>
-        <label class="block mb-2 font-semibold text-gray-700">Email-kaaga:</label>
-        <input type="email" name="email" placeholder="Geli email sax ah..." required
+            <label style="font-weight:600;color:#333;">
+      Email-kaaga:
+      <input type="email" id="email" name="email" placeholder="Gali email-kaaga" required
+             style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
+             transition:0.3s;border-left:4px solid #007bff;"
           oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')"
           oninput="this.setCustomValidity('')"
           class="w-full p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400
@@ -96,8 +99,11 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 
       <!-- Fariinta -->
       <div>
-        <label class="block mb-2 font-semibold text-gray-700">Fariintaada:</label>
-        <textarea name="message" rows="5" placeholder="Qor fariintaada..." required
+           <label style="font-weight:600;color:#333;">
+      Fariintaada:
+      <textarea id="message" name="message" rows="6" placeholder="Qor fariintaada..." required
+                style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
+                transition:0.3s;border-left:4px solid #007bff;"
           oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')"
           oninput="this.setCustomValidity('')"
           class="w-full p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400
