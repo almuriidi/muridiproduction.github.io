@@ -21,152 +21,371 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 <!DOCTYPE html>
 <html lang="so">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nala Soo Xiriir - Muriidi Production</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nala Soo Xiriir — Muriidi Production</title>
 
-<body class="bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-800 font-sans">
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <section id="contact" 
-    class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl border border-blue-100 animate-fadeIn">
-    
-    <h2 class="text-4xl font-bold mb-6 text-center text-blue-700 tracking-wide drop-shadow-sm">
-      ✉️ Nala Soo Xiriir
-    </h2>
+  <!-- SweetAlert2 (nice success / error popups) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <div class="text-center mb-8 space-y-2 text-gray-700">
-      <p><strong>Email:</strong> 
-        <a href="mailto:ahmedabdimuridi333@gmail.com" 
-           class="text-blue-600 hover:text-blue-800 hover:underline transition">
-           ahmedabdimuridi333@gmail.com
-        </a>
-      </p>
+  <style>
+    :root{
+      --bg-1: #071226;
+      --bg-2: #0b2540;
+      --accent: #00e5ff;
+      --accent-2: #4f46e5;
+      --muted: #9aa7bf;
+      --input-bg: rgba(255,255,255,0.04);
+    }
 
-      <p>
-        <strong>Tel 1:</strong> 
-        <a href="tel:+252618291850" class="text-blue-600 hover:text-blue-800 transition">
-          +252618291850
-        </a>
-      </p>
+    /* Page background: animated subtle gradient */
+    html,body{height:100%;}
+    body{
+      margin:0;
+      min-height:100%;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#e6eef8;
+      background: linear-gradient(120deg,var(--bg-1),var(--bg-2));
+      overflow-y:auto;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    /* moving gradient overlay */
+    body::after{
+      content:"";
+      position:fixed; inset:0; z-index:0;
+      background: linear-gradient(60deg, rgba(79,70,229,0.08), rgba(0,229,255,0.06), rgba(16,185,129,0.03));
+      background-size: 300% 300%;
+      animation: bgShift 14s ease infinite;
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+    @keyframes bgShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
 
-      <p>
-        <strong>Tel 2:</strong> 
-        <a href="tel:+254798546265" class="text-blue-600 hover:text-blue-800 transition">
-          +254798546265
-        </a>
-      </p>
+    /* Center container */
+    .wrap{
+      position:relative;
+      z-index:1;
+      max-width:920px;
+      margin:48px auto;
+      padding:28px;
+    }
 
-      <p>
-        <strong>Facebook:</strong>
-        <a href="https://facebook.com/MuriidiProduction" target="_blank" 
-           class="text-blue-600 hover:text-blue-800 hover:underline transition">
-          Muriidi Production
-        </a>
-      </p>
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+      overflow:hidden;
+      animation: liftUp 0.9s ease both;
+    }
+    @keyframes liftUp{
+      from{opacity:0; transform:translateY(20px) scale(0.995)}
+      to{opacity:1; transform:translateY(0) scale(1)}
+    }
+
+    .header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .title{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo-dot{
+      width:46px;height:46px;border-radius:10px;
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#031027;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(79,70,229,0.12);
+    }
+    h1{margin:0;font-size:20px;color:#e9f5ff;}
+    p.lead{margin:0;color:var(--muted);font-size:13px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+    }
+
+    /* Left: contact form */
+    .form{
+      padding:6px 0;
+    }
+
+    .label{display:block;margin-bottom:8px;color:var(--muted);font-size:13px;font-weight:600;}
+    .input-group{position:relative;}
+    .input-icon{
+      position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--accent);
+      font-size:16px; pointer-events:none;
+    }
+
+    input[type="text"], input[type="email"], textarea{
+      width:100%;
+      padding:14px 14px 14px 46px; /* left padding to avoid icon */
+      background: var(--input-bg);
+      border: 1px solid rgba(255,255,255,0.04);
+      color: #eaf6ff;
+      border-radius:10px;
+      font-size:14px;
+      outline:none;
+      transition: box-shadow .25s ease, border-color .18s ease, background .2s ease;
+      box-shadow: inset 0 -6px 20px rgba(0,0,0,0.25);
+      resize:vertical;
+      min-height:44px;
+    }
+
+    /* subtle placeholder color and left spacing */
+    ::placeholder{ color: #93a6bf; opacity:1; }
+    input::placeholder, textarea::placeholder { padding-left:2px; }
+
+    input:focus, textarea:focus{
+      border-color: rgba(0,229,255,0.9);
+      box-shadow: 0 6px 28px rgba(0,229,255,0.06), 0 0 14px rgba(79,70,229,0.06);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* bottom accent for modern look */
+    .accent-border{
+      border-bottom: 3px solid rgba(0,180,255,0.25);
+    }
+    input:focus.accent-border, textarea:focus.accent-border{ border-bottom-color: var(--accent); }
+
+    .row{display:flex;gap:12px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:12px;
+      border: none;
+      cursor:pointer;
+      font-weight:700;
+      color:#021028;
+      background: linear-gradient(90deg,var(--accent), var(--accent-2));
+      box-shadow: 0 10px 30px rgba(79,70,229,0.12);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover{ transform: translateY(-3px) scale(1.01); box-shadow: 0 18px 45px rgba(79,70,229,0.18); }
+
+    /* Right: contact info */
+    .side{
+      padding:12px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(10,20,32,0.45), rgba(6,12,22,0.35));
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .meta{display:flex; flex-direction:column; gap:12px;}
+    .meta-row{display:flex; gap:12px; align-items:center;}
+    .meta i{ color: var(--accent); min-width:22px; text-align:center; font-size:16px;}
+    .meta a{ color:#cfefff; text-decoration:none; font-weight:600; }
+    .meta a:hover{ text-decoration:underline; color:var(--accent);}
+
+    .location{display:flex; gap:10px; align-items:center; color:#cfefff;}
+    .small{ font-size:13px; color:var(--muted); margin-top:6px;}
+
+    /* success message inline (hidden) */
+    .success-inline{display:none; color:#7fffd4; font-weight:700; text-align:center; margin-top:10px;}
+
+    /* responsive */
+    @media (max-width:920px){
+      .grid{ grid-template-columns: 1fr; }
+      .side{ order: -1; margin-bottom:8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="card" role="region" aria-label="Contact Muriidi Production">
+      <div class="header">
+        <div class="title">
+          <div class="logo-dot">MP</div>
+          <div>
+            <h1>Muriidi Production</h1>
+            <p class="lead">Hel adeegyo dijital oo tayo sare leh — Web, Video, Graphics & Marketing</p>
+          </div>
+        </div>
+        <div class="small">Nala soo xiriir: <strong style="color:var(--accent)">+254 798 546 265</strong></div>
+      </div>
+
+      <div class="grid">
+        <!-- Left: Form -->
+        <div class="form" aria-labelledby="contact-form-title">
+          <h2 id="contact-form-title" style="margin-top:0;color:#dff9ff;font-size:18px">Nala Soo Xiriir</h2>
+          <p class="small">Buuxi foomka hoose, waan ku soo jawaabi doonaa sida ugu dhaqsaha badan.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" novalidate>
+            <!-- Name -->
+            <div class="input-group">
+              <span class="input-icon input-icon-left" aria-hidden="true">
+                <i class="fa-solid fa-user input-icon" style="color:var(--accent)"></i>
+              </span>
+              <input type="text" name="name" placeholder="Magacaaga" aria-label="Magaca" required class="accent-border">
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+              <span class="input-icon input-icon-left" aria-hidden="true">
+                <i class="fa-solid fa-envelope input-icon" style="color:var(--accent)"></i>
+              </span>
+              <input type="email" name="email" placeholder="Email-kaaga" aria-label="Email" required class="accent-border">
+            </div>
+
+            <!-- Message -->
+            <div class="input-group">
+              <span class="input-icon input-icon-left" aria-hidden="true">
+                <i class="fa-solid fa-message input-icon" style="color:var(--accent)"></i>
+              </span>
+              <textarea name="message" placeholder="Fariintaada ku qor halkan..." aria-label="Fariin" rows="5" required class="accent-border"></textarea>
+            </div>
+
+            <div style="display:flex;gap:12px;align-items:center;margin-top:4px;">
+              <button type="submit" class="btn" aria-label="Dir Fariinta">
+                <i class="fa-solid fa-paper-plane" style="color:rgba(2,6,23,0.85)"></i>
+                <span>Dir Fariinta</span>
+              </button>
+              <div class="success-inline" id="successInline">✅ Mahadsanid — fariintaada waa la diray!</div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Side contact info -->
+        <aside class="side" aria-label="Macluumaadka Xiriirka">
+          <div class="meta">
+            <div class="meta-row">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <div style="font-weight:700">Email</div>
+                <a href="mailto:ahmedabdimuridi333@gmail.com">ahmedabdimuridi333@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="meta-row" style="cursor:pointer" onclick="location.href='tel:+252618291850'">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <div style="font-weight:700">Somalia</div>
+                <a href="tel:+252618291850">+252 618 291 850</a>
+              </div>
+            </div>
+
+            <div class="meta-row" style="cursor:pointer" onclick="location.href='tel:+254798546265'">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <div style="font-weight:700">Kenya</div>
+                <a href="tel:+254798546265">+254 798 546 265</a>
+              </div>
+            </div>
+
+            <div class="meta-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <div style="font-weight:700">Location</div>
+                <div class="location">Nairobi, Kenya</div>
+              </div>
+            </div>
+
+            <div class="meta-row" style="align-items:center">
+              <i class="fa-brands fa-facebook"></i>
+              <div>
+                <div style="font-weight:700">Facebook</div>
+                <a href="https://www.facebook.com/MuriidiProduction" target="_blank">Muriidi Production</a>
+              </div>
+            </div>
+
+            <div class="small">Xusuusin: lambarradu waa la taaban karaa (mobile) — geli si toos ah wicitaan.</div>
+          </div>
+        </aside>
+      </div>
+
+      <footer style="margin-top:22px; text-align:center; font-size:13px; color:var(--muted)">
+        &copy; 2025 Muriidi Production — Dhamaan Xuquuqdu Way Xafidan Tahay
+      </footer>
     </div>
-
-    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-6">
-      
-      <!-- Magaca -->
-      <div>
-        <label class="block mb-2 font-semibold text-gray-700">Magacaaga:</label>
-        <div class="relative flex items-center">
-          <span class="absolute left-4 text-blue-500 text-xl">📛</span>
-          <input type="text" name="name" placeholder="Geli magacaaga..." required 
-            oninvalid="this.setCustomValidity('⚠️ Fadlan geli magacaaga!')" 
-            oninput="this.setCustomValidity('')"
-            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
-                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
-                   ease-in-out hover:shadow-md">
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div>
-        <label class="block mb-2 font-semibold text-gray-700">Email-kaaga:</label>
-        <div class="relative flex items-center">
-          <span class="absolute left-4 text-blue-500 text-xl">📧</span>
-          <input type="email" name="email" placeholder="Geli email sax ah..." required 
-            oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')" 
-            oninput="this.setCustomValidity('')"
-            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
-                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
-                   ease-in-out hover:shadow-md">
-        </div>
-      </div>
-
-      <!-- Fariinta -->
-      <div>
-        <label class="block mb-2 font-semibold text-gray-700">Fariintaada:</label>
-        <div class="relative">
-          <span class="absolute top-3 left-4 text-blue-500 text-xl">💬</span>
-          <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
-            oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')" 
-            oninput="this.setCustomValidity('')"
-            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
-                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
-                   ease-in-out hover:shadow-md"></textarea>
-        </div>
-      </div>
-
-      <!-- Button -->
-      <button type="submit" 
-        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 
-               text-white py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition 
-               duration-300 ease-in-out">
-        🚀 Dir Fariinta
-      </button>
-    </form>
-  </section>
+  </div>
 
   <script>
-    // animation
-    document.querySelectorAll('.animate-fadeIn').forEach(el => {
-      el.style.opacity = 0;
-      el.style.transform = 'translateY(20px)';
-      setTimeout(() => {
-        el.style.transition = 'all 0.8s ease';
-        el.style.opacity = 1;
-        el.style.transform = 'translateY(0)';
-      }, 200);
-    });
+    // Helper: show SweetAlert2 success or error
+    const showSuccess = () => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Mahadsanid!',
+        text: 'Fariintaada waa la diray — waan kula soo xiriiri doonaa sida ugu dhaqsaha badan.',
+        confirmButtonColor: '#2563eb'
+      });
+    };
+    const showError = (msg = 'Fadlan isku day mar kale.') => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Khalad!',
+        text: msg,
+        confirmButtonColor: '#e11d48'
+      });
+    };
 
-    // form submission
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
+    // Form handling with Somali validation messages
+    (function(){
+      const form = document.getElementById('contactForm');
+      const successInline = document.getElementById('successInline');
 
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { Accept: "application/json" }
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        // trim values
+        const name = (form.name.value || '').trim();
+        const email = (form.email.value || '').trim();
+        const message = (form.message.value || '').trim();
+
+        if (!name || !email || !message){
+          // validation notification in Somali
+          showError('❌ Fadlan buuxi dhammaan meelaha bannaan!');
+          return;
+        }
+
+        // send to Formspree
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+
+          if (response.ok){
+            // inline + modal success
+            successInline.style.display = 'block';
+            showSuccess();
+            form.reset();
+            setTimeout(()=> successInline.style.display='none', 4500);
+          } else {
+            showError('Fariinta lama dirin — isku day mar kale.');
+          }
+        } catch (err) {
+          showError('Khalad shabakad — fadlan hubi internet-kaaga.');
+        }
       });
 
-      if (response.ok) {
-        Swal.fire({
-          icon: 'success',
-          title: '✅ Fariintaada waa la diray!',
-          text: 'Waad ku mahadsan tahay — waxaan kula soo xiriiri doonaa sida ugu dhakhsaha badan.',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#2563eb'
+      // Improve UX: remove native validation popups, we use custom
+      Array.from(form.elements).forEach(el => {
+        el.addEventListener('invalid', ev => {
+          ev.preventDefault();
+          showError('Fadlan buuxi dhammaan meelaha bannaan (geli xog buuxda).');
         });
-        form.reset();
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: '❌ Fariinta lama dirin!',
-          text: 'Fadlan isku day mar kale — waxaa laga yaabaa in xiriirka uu go’an yahay.',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#e11d48'
-        });
-      }
-    });
+      });
+    })();
   </script>
 </body>
-
+</html>
 
   </script>
     </section>
