@@ -19,44 +19,61 @@ style="max-width:600px;margin:40px auto;padding:25px;background:linear-gradient(
 border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-family:'Poppins',sans-serif;">
  
 <section id="contact" class="contact-section" 
-style="max-width:700px;margin:auto;padding:40px 20px;background:linear-gradient(135deg,#ffffff,#f0f8ff);
-border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',sans-serif;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nala Soo Xiriir - Muriidi Production</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
 
-  <h2 style="text-align:center;color:#007bff;margin-bottom:15px;font-size:28px;">Nala Soo Xiriir</h2>
-  <p style="text-align:center;color:#555;margin-bottom:30px;">Fadlan buuxi foomkan si aad fariin noogu dirto.</p>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 font-sans">
+  <section id="contact" class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-700">Nala Soo Xiriir</h2>
 
-  <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" 
-  style="display:flex;flex-direction:column;gap:20px;">
+    <div class="text-center mb-8 space-y-2">
+      <p><strong>Email:</strong> 
+        <a href="mailto:ahmedabdimuridi333@gmail.com" class="text-blue-600 hover:underline">ahmedabdimuridi333@gmail.com</a>
+      </p>
+      <p><strong>Tel 1:</strong> +252618291850</p>
+      <p><strong>Tel 2:</strong> +254798546265</p>
+      <p><strong>Facebook:</strong> 
+        <a href="https://facebook.com/MuriidiProduction" target="_blank" class="text-blue-600 hover:underline">
+          Muriidi Production
+        </a>
+      </p>
+    </div>
 
-    <label style="font-weight:600;color:#333;">
-      Magacaaga:
-      <input type="text" id="name" name="name" placeholder="Gali magacaaga" required
-             style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
-             transition:0.3s;border-left:4px solid #007bff;">
-    </label>
+    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-5">
+      <div>
+        <label class="block mb-2 font-semibold">Magacaaga:</label>
+        <input type="text" name="name" placeholder="Geli magacaaga" required 
+          oninvalid="this.setCustomValidity('Fadlan geli magacaaga!')" 
+          oninput="this.setCustomValidity('')"
+          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300">
+      </div>
 
-    <label style="font-weight:600;color:#333;">
-      Email-kaaga:
-      <input type="email" id="email" name="email" placeholder="Gali email-kaaga" required
-             style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
-             transition:0.3s;border-left:4px solid #007bff;">
-    </label>
+      <div>
+        <label class="block mb-2 font-semibold">Email-kaaga:</label>
+        <input type="email" name="email" placeholder="Geli email-kaaga" required 
+          oninvalid="this.setCustomValidity('Fadlan geli email sax ah!')" 
+          oninput="this.setCustomValidity('')"
+          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300">
+      </div>
 
-    <label style="font-weight:600;color:#333;">
-      Fariintaada:
-      <textarea id="message" name="message" rows="6" placeholder="Qor fariintaada..." required
-                style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:5px;
-                transition:0.3s;border-left:4px solid #007bff;"></textarea>
-    </label>
+      <div>
+        <label class="block mb-2 font-semibold">Fariintaada:</label>
+        <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
+          oninvalid="this.setCustomValidity('Fadlan qor fariintaada!')" 
+          oninput="this.setCustomValidity('')"
+          class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition duration-300"></textarea>
+      </div>
 
-    <button type="submit"
-            style="background-color:#007bff;color:white;font-size:17px;font-weight:bold;border:none;
-            padding:14px;border-radius:10px;cursor:pointer;transition:all 0.3s ease;">
-      🚀 Send Message
-    </button>
-      </form>
-</section>
-     <script>
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-md transform hover:scale-105 transition duration-300">
+        Dir Fariinta
+      </button>
+    </form>
+  </section>
+
+  <script>
     const form = document.getElementById("contactForm");
 
     form.addEventListener("submit", async (e) => {
@@ -89,9 +106,6 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);font-family:'Poppins',s
       }
     });
   </script>
-
-            </div>
-        </div>
     </section>
     <footer id="footer">
         <h2>Muriidi Production; all rights reserved 2025</h2>
