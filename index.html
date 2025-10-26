@@ -22,194 +22,151 @@ border-radius:15px;box-shadow:0 4px 20px rgba(0,0,0,0.1);text-align:center;font-
 <html lang="so">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nala Soo Xiriir - Muriidi Production</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nala Soo Xiriir - Muriidi Production</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    .container {
-      max-width: 700px;
-      margin: 60px auto;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+<body class="bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-800 font-sans">
 
-    h2 {
-      text-align: center;
-      color: #00ffff;
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
+  <section id="contact" 
+    class="max-w-3xl mx-auto p-8 mt-10 bg-white rounded-2xl shadow-2xl border border-blue-100 animate-fadeIn">
+    
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-700 tracking-wide drop-shadow-sm">
+      ✉️ Nala Soo Xiriir
+    </h2>
 
-    .contact-info {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+    <div class="text-center mb-8 space-y-2 text-gray-700">
+      <p><strong>Email:</strong> 
+        <a href="mailto:ahmedabdimuridi333@gmail.com" 
+           class="text-blue-600 hover:text-blue-800 hover:underline transition">
+           ahmedabdimuridi333@gmail.com
+        </a>
+      </p>
 
-    .contact-info p {
-      font-size: 16px;
-      margin: 8px 0;
-    }
+      <p>
+        <strong>Tel 1:</strong> 
+        <a href="tel:+252618291850" class="text-blue-600 hover:text-blue-800 transition">
+          +252618291850
+        </a>
+      </p>
 
-    .contact-info i {
-      color: #00ffff;
-      margin-right: 10px;
-    }
+      <p>
+        <strong>Tel 2:</strong> 
+        <a href="tel:+254798546265" class="text-blue-600 hover:text-blue-800 transition">
+          +254798546265
+        </a>
+      </p>
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .input-group {
-      position: relative;
-    }
-
-    .input-group i {
-      position: absolute;
-      top: 12px;
-      left: 10px;
-      color: #00ffff;
-      font-size: 18px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px 12px 12px 40px;
-      border: none;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      outline: none;
-      font-size: 15px;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #ccc;
-    }
-
-    button {
-      padding: 12px;
-      background: #00ffff;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #1effd3;
-      transform: scale(1.05);
-    }
-
-    .success-message {
-      text-align: center;
-      color: #00ff90;
-      font-weight: bold;
-      margin-top: 10px;
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 25px;
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h2>Nala Soo Xiriir</h2>
-
-    <div class="contact-info">
-      <p><i class="fa-solid fa-envelope"></i> ahmedabdimuridi333@gmail.com</p>
-      <p onclick="window.location.href='tel:+252618291850'"><i class="fa-solid fa-phone"></i> +252 618 291 850</p>
-      <p onclick="window.location.href='tel:+254798546265'"><i class="fa-solid fa-phone"></i> +254 798 546 265</p>
-      <p><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</p>
-      <p><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/MuriidiProduction" target="_blank">Muriidi Production</a></p>
+      <p>
+        <strong>Facebook:</strong>
+        <a href="https://facebook.com/MuriidiProduction" target="_blank" 
+           class="text-blue-600 hover:text-blue-800 hover:underline transition">
+          Muriidi Production
+        </a>
+      </p>
     </div>
 
-    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST">
-      <div class="input-group">
-        <i class="fa-solid fa-user"></i>
-        <input type="text" name="name" placeholder="Magacaaga" required>
+    <form id="contactForm" action="https://formspree.io/f/xyzbyrzq" method="POST" class="space-y-6">
+      
+      <!-- Magaca -->
+      <div>
+        <label class="block mb-2 font-semibold text-gray-700">Magacaaga:</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-4 text-blue-500 text-xl">📛</span>
+          <input type="text" name="name" placeholder="Geli magacaaga..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan geli magacaaga!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md">
+        </div>
       </div>
 
-      <div class="input-group">
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" name="email" placeholder="Email-kaaga" required>
+      <!-- Email -->
+      <div>
+        <label class="block mb-2 font-semibold text-gray-700">Email-kaaga:</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-4 text-blue-500 text-xl">📧</span>
+          <input type="email" name="email" placeholder="Geli email sax ah..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan geli email sax ah!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md">
+        </div>
       </div>
 
-      <div class="input-group">
-        <i class="fa-solid fa-comment-dots"></i>
-        <textarea name="message" rows="5" placeholder="Fariintaada ku qor halkan..." required></textarea>
+      <!-- Fariinta -->
+      <div>
+        <label class="block mb-2 font-semibold text-gray-700">Fariintaada:</label>
+        <div class="relative">
+          <span class="absolute top-3 left-4 text-blue-500 text-xl">💬</span>
+          <textarea name="message" rows="5" placeholder="Qor fariintaada..." required 
+            oninvalid="this.setCustomValidity('⚠️ Fadlan qor fariintaada!')" 
+            oninput="this.setCustomValidity('')"
+            class="w-full pl-12 pr-3 p-3 border-2 border-gray-300 rounded-lg placeholder-gray-400 
+                   focus:border-blue-500 focus:ring-2 focus:ring-blue-300 outline-none transition duration-300 
+                   ease-in-out hover:shadow-md"></textarea>
+        </div>
       </div>
 
-      <button type="submit">Dir Fariinta</button>
-      <div class="success-message" id="successMessage">✅ Fariintaada waa la diray. Mahadsanid!</div>
+      <!-- Button -->
+      <button type="submit" 
+        class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 
+               text-white py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition 
+               duration-300 ease-in-out">
+        🚀 Dir Fariinta
+      </button>
     </form>
-
-    <footer>
-      &copy; 2025 Muriidi Production - Dhamaan Xuquuqdu Way Xafidan Tahay
-    </footer>
-  </div>
+  </section>
 
   <script>
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
+    // animation
+    document.querySelectorAll('.animate-fadeIn').forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        el.style.transition = 'all 0.8s ease';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, 200);
+    });
 
-    form.addEventListener('submit', async function (e) {
+    // form submission
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const formData = new FormData(form);
 
-      // Hubi in meel bannaan la buuxiyay
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-
-      if (!name || !email || !message) {
-        alert('❌ Fadlan buuxi meelaha bannaan!');
-        return;
-      }
-
-      // Dir formka
       const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" }
       });
 
       if (response.ok) {
-        successMessage.style.display = 'block';
+        Swal.fire({
+          icon: 'success',
+          title: '✅ Fariintaada waa la diray!',
+          text: 'Waad ku mahadsan tahay — waxaan kula soo xiriiri doonaa sida ugu dhakhsaha badan.',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#2563eb'
+        });
         form.reset();
-        setTimeout(() => successMessage.style.display = 'none', 4000);
       } else {
-        alert('Fariinta lama dirin, isku day mar kale.');
+        Swal.fire({
+          icon: 'error',
+          title: '❌ Fariinta lama dirin!',
+          text: 'Fadlan isku day mar kale — waxaa laga yaabaa in xiriirka uu go’an yahay.',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#e11d48'
+        });
       }
     });
   </script>
 </body>
-</html>
+
 
 
 
